@@ -149,16 +149,7 @@ function App() {
             <Icon className="icon" icon={chevronLeft} size={37} />
           </span>
         </div>
-        <div
-          ref={el => (autoClick = el)}
-          onClick={nextSlide}
-          className="arrows right"
-        >
-          <span>
-            <Icon className="icon" icon={chevronRight} size={37} />
-          </span>
-        </div>
-        <div className="inner" style={{display:"none"}}>
+        <div className="inner">
           <div className="t-image">
             <ul ref={el => (imageList = el)}>
               {testimonials.map((person, index) => (
@@ -180,6 +171,15 @@ function App() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div
+            ref={el => (autoClick = el)}
+            onClick={nextSlide}
+            className="arrows right"
+          >
+            <span>
+              <Icon className="icon" icon={chevronRight} size={37} />
+            </span>
           </div>
         </div>
       </div>
