@@ -1,0 +1,44 @@
+.home {
+  display: flex;
+  width: 100%;
+  height: 40vh;
+  background-image: url("../../images/keyboard.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  margin: 0 auto;
+
+  &:hover .seen {
+    visibility: visible;
+  }
+  .history {
+    height: 39vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    visibility: hidden;
+    p {
+      font-size: 0.75rem;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    h5 {
+      width: 90%;
+      margin-left: 3%;
+      margin-right: 7%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      &.info-heading {
+        padding: 1rem;
+        background: rgba(lighten($color: #444, $amount: 2), 0.77);
+      }
+    }
+    &.seen {
+    }
+  }
+}
