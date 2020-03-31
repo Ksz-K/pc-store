@@ -5,39 +5,6 @@ import Home from "./pages/HomePage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
-  const [dimension, setDimension] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth
-  });
-
-  function ResizeCheck(fn, slot) {
-    let timer;
-    return () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        timer = null;
-        fn.apply(this, arguments);
-      }, slot);
-    };
-  }
-
-  useEffect(() => {
-    let vh = dimension.height * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-    const debounceHandleResize = ResizeCheck(function handleResize() {
-      setDimension({
-        height: window.innerHeight,
-        width: window.innerWidth
-      });
-    }, 1000);
-
-    window.addEventListener("resize", debounceHandleResize);
-    return () => {
-      window.removeEventListener("resize", debounceHandleResize);
-    };
-  }, []);
-
   return (
     <Router>
       <Header />

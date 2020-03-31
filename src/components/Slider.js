@@ -5,6 +5,8 @@ import { chevronRight } from "react-icons-kit/fa/chevronRight";
 
 import gsap from "gsap";
 
+import "reset-css";
+
 const testimonials = [
   {
     id: 1,
@@ -37,20 +39,16 @@ function App() {
   let testimonialList = useRef(null);
   let autoClick = useRef(null);
   let arr;
-  let oldActive;
   let imageWidth;
-  let newValue;
-  let newActive;
 
   const [state, setState] = useState([true, false, false]);
 
   useEffect(() => {
     arr = Array.from(imageList.children);
     imageWidth = imageList.offsetWidth;
-    console.log(imageWidth);
     const interval = setInterval(() => {
       simulateClick(autoClick);
-    }, 200000);
+    }, 20000);
     return () => clearInterval(interval);
   }, [state]);
 
@@ -91,22 +89,13 @@ function App() {
   };
 
   const nextSlide = () => {
-    if (arr !== undefined) {
-      oldActive = arr
-        .map(elLi => elLi.classList.value === "active")
-        .findIndex(visible => visible === true);
-      newValue = state;
-      newValue[oldActive] = false;
-      newActive = oldActive === arr.length * 1 - 1 ? 0 : oldActive + 1;
-      newValue[newActive] = true;
-    } else {
-      oldActive = state.findIndex(visible => visible === true);
-      newValue = state;
-      newValue[oldActive] = false;
-      newActive = oldActive + 1;
-      newValue[newActive] = true;
-    }
-
+    let oldActive = arr
+      .map(elLi => elLi.classList.value === "active")
+      .findIndex(visible => visible === true);
+    let newValue = state;
+    newValue[oldActive] = false;
+    let newActive = oldActive === arr.length * 1 - 1 ? 0 : oldActive + 1;
+    newValue[newActive] = true;
     setState([...newValue]);
 
     slideIt(newActive);
@@ -116,23 +105,14 @@ function App() {
   };
 
   const prevSlide = () => {
-    if (arr !== undefined) {
-      oldActive = arr
-        .map(elLi => elLi.classList.value === "active")
-        .findIndex(visible => visible === true);
-      newValue = state;
-      newValue[oldActive] = false;
-      newActive = oldActive === 0 ? arr.length * 1 - 1 : oldActive - 1;
-      console.log(newActive);
-      newValue[newActive] = true;
-    } else {
-      oldActive = state.findIndex(visible => visible === true);
-      newValue = state;
-      newValue[oldActive] = false;
-      newActive = oldActive + 1;
-      newValue[newActive] = true;
-    }
-
+    let oldActive = arr
+      .map(elLi => elLi.classList.value === "active")
+      .findIndex(visible => visible === true);
+    let newValue = state;
+    newValue[oldActive] = false;
+    let newActive = oldActive === 0 ? arr.length * 1 - 1 : oldActive - 1;
+    console.log(newActive);
+    newValue[newActive] = true;
     setState([...newValue]);
 
     slideIt(newActive);
@@ -172,15 +152,16 @@ function App() {
               ))}
             </ul>
           </div>
-          <div
-            ref={el => (autoClick = el)}
-            onClick={nextSlide}
-            className="arrows right"
-          >
-            <span>
-              <Icon className="icon" icon={chevronRight} size={37} />
-            </span>
-          </div>
+        </div>
+
+        <div
+          ref={el => (autoClick = el)}
+          onClick={nextSlide}
+          className="arrows right"
+        >
+          <span>
+            <Icon className="icon" icon={chevronRight} size={37} />
+          </span>
         </div>
       </div>
     </div>

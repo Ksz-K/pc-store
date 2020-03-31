@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,600,800&display=swap");
 
-//@import "/node_modules/reset-css/reset.css";
 @import "./variables.scss";
 @import "./breakpoints.scss";
 @import "./components/header.scss";
@@ -20,7 +19,7 @@ body {
   display: flex;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: hidden;
 }
