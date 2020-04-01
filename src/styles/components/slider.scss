@@ -1,11 +1,11 @@
-.testimonial-section {
+.slider-section {
   height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .testimonial-container {
+  .slider-container {
     width: 100%;
     min-width: 100%;
     height: 50vh;
@@ -36,7 +36,7 @@
       height: 50vh;
       width: 100vw;
 
-      .t-image {
+      .slide-image {
         width: 85vw;
         height: 50vh;
         display: flex;
@@ -83,7 +83,7 @@
           }
         }
       }
-      .t-content {
+      .slide-desc {
         width: 45vw;
         height: 50vh;
         align-items: center;

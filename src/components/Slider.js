@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { slideInfo } from "../assets/data";
 import { Icon } from "react-icons-kit";
 import { chevronLeft } from "react-icons-kit/fa/chevronLeft";
 import { chevronRight } from "react-icons-kit/fa/chevronRight";
@@ -7,36 +8,9 @@ import gsap from "gsap";
 
 import "reset-css";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Julia Cameron",
-    title: "Creative Director, VISA",
-    image: `${require("../assets/abc.png")}`,
-    quote:
-      "It's all good. I was amazed at the quality of the Design. We've seen amazing results already."
-  },
-  {
-    id: 2,
-    name: "Mark Jacobs",
-    title: "Tech Lead, Google",
-    image: `${require("../assets/abc.png")}`,
-    quote:
-      "The rebranding has really helped our business. Definitely worth the investment."
-  },
-  {
-    id: 3,
-    name: "Lisa Bearings",
-    title: "Brand Coordinator, Facebook",
-    image: `${require("../assets/abc.png")}`,
-    quote:
-      "The service was excellent. Absolutely wonderful! A complete redesign did it for us."
-  }
-];
-
-function App() {
+const App = () => {
   let imageList = useRef(null);
-  let testimonialList = useRef(null);
+  let sliderList = useRef(null);
   let autoClick = useRef(null);
   let arr;
   let imageWidth;
@@ -48,7 +22,7 @@ function App() {
     imageWidth = imageList.offsetWidth;
     const interval = setInterval(() => {
       simulateClick(autoClick);
-    }, 20000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [state]);
 
@@ -59,7 +33,7 @@ function App() {
   };
 
   const slideIt = index => {
-    gsap.to(".t-image ul li", 1, {
+    gsap.to(".slide-image ul li", 1, {
       x: function() {
         return index * -1 * imageWidth;
       },
@@ -75,13 +49,13 @@ function App() {
   };
 
   const fadeOut = (index, duration) => {
-    gsap.to(testimonialList.children[index], duration, {
+    gsap.to(sliderList.children[index], duration, {
       opacity: 0,
       ease: "Power3.easeInOut"
     });
   };
   const fadeIn = (index, duration) => {
-    gsap.to(testimonialList.children[index], duration, {
+    gsap.to(sliderList.children[index], duration, {
       opacity: 1,
       ease: "Power3.easeInOut",
       delay: 0.44
@@ -122,26 +96,26 @@ function App() {
   };
 
   return (
-    <div className="testimonial-section">
-      <div className="testimonial-container">
+    <div className="slider-section">
+      <div className="slider-container">
         <div onClick={prevSlide} className="arrows left">
           <span>
             <Icon className="icon" icon={chevronLeft} size={37} />
           </span>
         </div>
         <div className="inner">
-          <div className="t-image">
+          <div className="slide-image">
             <ul ref={el => (imageList = el)}>
-              {testimonials.map((person, index) => (
+              {slideInfo.map((person, index) => (
                 <li key={person.id} className={state[index] ? "active" : ""}>
                   <img src={person.image} alt={person.name} />
                 </li>
               ))}
             </ul>
           </div>
-          <div className="t-content">
-            <ul ref={el => (testimonialList = el)}>
-              {testimonials.map(personInfo => (
+          <div className="slide-desc">
+            <ul ref={el => (sliderList = el)}>
+              {slideInfo.map(personInfo => (
                 <li key={personInfo.id}>
                   <div className="content-inner">
                     <p className="quote">{personInfo.quote}</p>
@@ -166,6 +140,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
