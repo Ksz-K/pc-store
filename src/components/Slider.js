@@ -17,6 +17,7 @@ const App = () => {
 
   const [state, setState] = useState([true, false, false]);
 
+  console.log(slideInfo);
   useEffect(() => {
     arr = Array.from(imageList.children);
     imageWidth = imageList.offsetWidth;
@@ -118,9 +119,9 @@ const App = () => {
               {slideInfo.map(personInfo => (
                 <li key={personInfo.id}>
                   <div className="content-inner">
-                    <p className="quote">{personInfo.quote}</p>
                     <h3 className="name">{personInfo.name}</h3>
-                    <h4 className="title">{personInfo.title}</h4>
+                    <h2 className="title">{personInfo.title}</h2>
+                    <p className="quote">{personInfo.quote}</p>{" "}
                   </div>
                 </li>
               ))}

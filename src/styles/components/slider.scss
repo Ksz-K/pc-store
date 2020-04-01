@@ -24,9 +24,15 @@
       transition: 0.3s ease-in-out;
       &:hover {
         box-shadow: 0px 0px 40px rgba(0, 0, 80, 0.21);
+        @include media("<=tablet") {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
       }
       &.right {
         right: 0;
+      }
+      @include media("<=tablet") {
+        background-color: rgba(0, 0, 10, 0.2);
       }
     }
     .inner {
@@ -36,6 +42,12 @@
       height: 50vh;
       width: 100vw;
 
+      @include media("<=tablet") {
+        background-image: url("../../images/gameStation.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       .slide-image {
         width: 85vw;
         height: 50vh;
@@ -44,7 +56,7 @@
         align-items: center;
         padding-left: 5vw;
         padding-right: 5vw;
-        @media (min-width: 768px) {
+        @include media(">=tablet") {
           padding-right: 0;
           width: 55vw;
         }
@@ -56,7 +68,7 @@
           width: $img-narrow;
           align-items: center;
           background-origin: 0px 0px 40px rgba(0, 0, 10, 0.25);
-          @media (min-width: 768px) {
+          @include media(">=tablet") {
             width: $img-wide;
           }
           li {
@@ -65,7 +77,7 @@
             justify-content: center;
             width: $img-narrow;
             min-width: $img-narrow;
-            @media (min-width: 768px) {
+            @include media(">=tablet") {
               width: $img-wide;
               min-width: $img-wide;
               justify-content: flex-start;
@@ -75,7 +87,7 @@
               width: $img-wide;
               vertical-align: middle;
               border-radius: 12px;
-              @media (min-width: 768px) {
+              @include media(">=tablet") {
                 width: $img-wide;
                 max-width: $img-wide;
               }
@@ -88,7 +100,7 @@
         height: 50vh;
         align-items: center;
         display: none;
-        @media (min-width: 768px) {
+        @include media(">=tablet") {
           display: flex;
           padding-right: 5vw;
         }
@@ -112,25 +124,23 @@
             .content-inner {
               width: 45vw;
               padding-right: 5vw;
-              .quote {
-                font-size: 26px;
-                letter-spacing: 0.88px;
-                line-height: 40px;
-                font-weight: 700;
-                margin-bottom: 16px;
-              }
+
               .name {
-                font-size: 18px;
-                letter-spacing: 0.88px;
-                line-height: 28px;
-                color: $secondary;
+                font-size: 2rem;
+                color: $purple;
                 font-weight: 600;
               }
               .title {
-                font-size: 18px;
-                letter-spacing: 0.88px;
-                line-height: 28px;
-                color: $secondary;
+                font-size: 1.5rem;
+                font-weight: bolder;
+                color: $green-title;
+                margin: 1.2rem 0;
+              }
+              .quote {
+                font-size: 1rem;
+                line-height: 1.7rem;
+                font-weight: 700;
+                width: 55%;
               }
             }
           }
