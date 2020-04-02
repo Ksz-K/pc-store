@@ -41,13 +41,21 @@
       align-items: center;
       height: 50vh;
       width: 100vw;
-
-      @include media("<=tablet") {
-        background-image: url("../../images/gameStation.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+      background-image: url("../../images/gameStation.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include media(">=tablet") {
+      background-image: url("../../images/sand.png");  
+      background-position: center;
+      background-size: 200px 196px;  
+     background-repeat: repeat
+// =========================================================================
+//  This pattern is downloaded from www.toptal.com/designers/subtlepatterns
+//  If you need more, that's where to get'em.
+//  ========================================================================  
+         }
+      
       .slide-image {
         width: 85vw;
         height: 50vh;

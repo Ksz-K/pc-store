@@ -4,7 +4,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: #000;
+
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
   color: white;
   font-family: "first";
   .top {
+    background-color: #000;
     position: absolute;
     width: 100vw;
     top: 0;
@@ -33,7 +34,7 @@
       }
     }
   }
-  .left {
+  .leftSection {
     visibility: hidden;
     background-color: #000;
     width: 33.333%;
@@ -46,7 +47,7 @@
       }
     }
   }
-  .middle {
+  .middleSection {
     visibility: hidden;
     background-color: #000;
     width: 33.333%;
@@ -59,7 +60,7 @@
       }
     }
   }
-  .right {
+  .rightSection {
     visibility: hidden;
     background-color: #000;
     width: 33.333%;
@@ -80,23 +81,30 @@
     }
   }
 
-  .bottom {
+  .bottom {  
     position: absolute;
+    justify-content:center;
     width: 100vw;
     height: 50vh;
-    background-color: #000;
     top: 50vh;
     left: 0;
     display: flex;
     flex-direction: row;
     margin: 0;
     padding: 0;
-    .first {
-      width: 49.999%;
+    .side {
+      background-color: #000;
+      display:flex;
+      width:49.9%;
+      z-index:100;
+    }
+    .center {
+     background-color: #000;
+    display:flex;
+      width:.2%;
+      z-index:100;
     }
 
-    .second {
-      width: 49.999%;
-    }
+    
   }
 }
