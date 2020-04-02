@@ -286,7 +286,7 @@
     quote: "64-bity, do 18 corów, Turbo mode: 4.7 Ghz"
   },
   {
-    id: 39,
+    id: 40,
     name: "GEFORCE RTX 2080 TI",
     title: "Debiut na rynku 20. września 2018",
     image: `${require("../assets/2018_RTX2080TI.webp")}`,

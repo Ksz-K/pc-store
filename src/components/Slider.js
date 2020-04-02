@@ -17,7 +17,6 @@ const App = () => {
 
   const [state, setState] = useState([true, false, false]);
 
-  console.log(slideInfo);
   useEffect(() => {
     arr = Array.from(imageList.children);
     imageWidth = imageList.offsetWidth;

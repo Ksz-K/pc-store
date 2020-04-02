@@ -2,17 +2,27 @@
 
 @import "./variables.scss";
 @import "./breakpoints.scss";
+@import "./components/curtain.scss";
 @import "./components/header.scss";
 @import "./components/homePage.scss";
 @import "./components/slider.scss";
+
+@font-face {
+  font-family: "first";
+  src: url("../assets//first.ttf") format("truetype");
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+#root {
+  position: relative;
+}
 .canister {
   width: 100vw;
   height: 90vh;
