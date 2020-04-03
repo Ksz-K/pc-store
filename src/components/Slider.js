@@ -12,6 +12,7 @@ const App = () => {
   let imageList = useRef(null);
   let sliderList = useRef(null);
   let autoClick = useRef(null);
+  let carousel = useRef(null);
   let arr;
   let imageWidth;
 
@@ -27,7 +28,7 @@ const App = () => {
   }, [state]);
 
   const simulateClick = e => {
-    if (e) {
+    if (e && carousel.classList.value === "start") {
       e.click();
     }
   };
@@ -85,7 +86,6 @@ const App = () => {
     let newValue = state;
     newValue[oldActive] = false;
     let newActive = oldActive === 0 ? arr.length * 1 - 1 : oldActive - 1;
-    console.log(newActive);
     newValue[newActive] = true;
     setState([...newValue]);
 
@@ -96,7 +96,7 @@ const App = () => {
   };
 
   return (
-    <div className="slider-section">
+    <div id="carousel" ref={el => (carousel = el)} className="slider-section">
       <div className="slider-container">
         <div onClick={prevSlide} className="arrows left">
           <span>

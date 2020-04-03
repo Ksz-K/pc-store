@@ -1,4 +1,5 @@
-.slider-section {
+.slider-section,
+.start {
   height: 50vh;
   width: 100%;
   display: flex;
@@ -46,16 +47,16 @@
       background-repeat: no-repeat;
       background-size: cover;
       @include media(">=tablet") {
-      background-image: url("../../images/sand.png");  
-      background-position: center;
-      background-size: 200px 196px;  
-     background-repeat: repeat
-// =========================================================================
-//  This pattern is downloaded from www.toptal.com/designers/subtlepatterns
-//  If you need more, that's where to get'em.
-//  ========================================================================  
-         }
-      
+        background-image: url("../../images/sand.png");
+        background-position: center;
+        background-size: 200px 196px;
+        background-repeat: repeat;
+        // =========================================================================
+        //  This pattern is downloaded from www.toptal.com/designers/subtlepatterns
+        //  If you need more, that's where to get'em.
+        //  ========================================================================
+      }
+
       .slide-image {
         width: 85vw;
         height: 50vh;

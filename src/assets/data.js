@@ -272,13 +272,6 @@
     quote: "Pamięć - 11GB DDR5, przepustowość 484.4 GB/s"
   },
   {
-    id: 38,
-    name: "GEFORCE GTX 1080 TI",
-    title: "Debiut na rynku 10. marca 2017",
-    image: `${require("../assets/2017_GTX1080TI.webp")}`,
-    quote: "Pamięć - 11GB DDR5, przepustowość 484.4 GB/s"
-  },
-  {
     id: 39,
     name: "Intel Core i9",
     title: "Rodzina Intel Core i9 dostępna jest od 2017 roku",
