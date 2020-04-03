@@ -3,12 +3,10 @@ import Curtain from "../components/Curtain";
 import InfoBoard from "../components/InfoBoard";
 import Slider from "../components/Slider";
 
-
 const Home = () => {
-  
   return (
     <Fragment>
-      <Curtain /> 
+      {/* <Curtain />  */}
       <InfoBoard />
       <Slider />
     </Fragment>

@@ -1,4 +1,8 @@
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrambleTextPlugin, SplitText);
 
 // OPEN MENU
 export const staggerReveal = (node1, node2) => {
@@ -52,7 +56,7 @@ export const fadeInUp = node => {
 
 export const fadeOut = node => {
   gsap.to(node, {
-    x:-640,
+    x: -640,
     duration: 1,
     delay: 0.1,
     opacity: 1,
@@ -62,7 +66,7 @@ export const fadeOut = node => {
 
 export const fadeIn = node => {
   gsap.to(node, {
-    x:0,
+    x: 0,
     duration: 1,
     delay: 0,
     opacity: 1,
@@ -90,7 +94,6 @@ export const handleHoverExit = e => {
   });
 };
 
-
 export const handleImage = (image, target) => {
   gsap.to(target, {
     background: `url(${image}) center center`,
@@ -116,4 +119,50 @@ export const handleImageReturn = target => {
     opacity: 0,
     skewY: 0
   });
+};
+
+//Animation Infoboard 1
+export const infoboardAnim = (
+  chars,
+  select = Date.now()
+    .toString()
+    .substr(-1)
+) => {
+  switch (select) {
+    case "1":
+      return gsap.from(chars, {
+        duration: 0.8,
+        opacity: 0,
+        x: 0,
+        yoyo: true,
+        ease: "back",
+        stagger: 0.01     
+      })
+    case "2":
+      return gsap.from(chars, {
+        duration: 0.8,
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        yoyo: true,
+        stagger: 0.01
+      });
+
+    default:
+      return gsap.from(chars, {
+        duration: 0.8,
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        repeat: 1,
+        yoyo: true,
+        stagger: 0.01
+      },"+=0");
+  }
 };

@@ -15,18 +15,39 @@
     height: 39vh;
     display: flex;
     justify-content: center;
-    padding: 2rem;
-    visibility: hidden;
+    padding: 1rem;
+    visibility: visible;
     .info-heading {
       width: 90%;
       margin-left: 3%;
       margin-right: 7%;
       color: #fff;
-      font-size: 14px;
+      font-size: 0.7rem;
+      line-height: 1.15rem;
       font-weight: 500;
       border-radius: 12px;
       padding: 2rem;
       background: rgba(lighten($color: #444, $amount: 2), 0.77);
+      @include media(">=phone") {
+        font-size: 0.9rem;
+        line-height: 3.5vw;
+      }
+      @include media(">=phablet") {
+        font-size: 1rem;
+        line-height: 3.5vw;
+      }
+      @include media(">=tablet") {
+        font-size: 1.15rem;
+        line-height: 2.7vw;
+      }
+      @include media(">=desktop") {
+        font-size: 1.4rem;
+        line-height: 2.2vw;
+      }
+      @include media(">=LGdesktop") {
+        font-size: 1.7rem;
+        line-height: 1.7vw;
+      }
     }
   }
 }
