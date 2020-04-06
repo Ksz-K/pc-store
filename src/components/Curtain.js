@@ -32,7 +32,7 @@ const Curtain = () => {
       )
       .to(
         ".info-heading",
-        { duration: 0.7, color: "rgba(255, 255, 255, 1)"},
+        { duration: 7, color: "rgba(255, 255, 255, 1)" },
         "bottom+=4"
       )
       .to("#carousel", { className: "+=slider-section start" }, "bottom+=5");

@@ -4,9 +4,11 @@ import { Icon } from "react-icons-kit";
 import { chevronLeft } from "react-icons-kit/fa/chevronLeft";
 import { chevronRight } from "react-icons-kit/fa/chevronRight";
 
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 import "reset-css";
+gsap.registerPlugin(ScrambleTextPlugin);
 
 const App = () => {
   let imageList = useRef(null);
@@ -23,7 +25,7 @@ const App = () => {
     imageWidth = imageList.offsetWidth;
     const interval = setInterval(() => {
       simulateClick(autoClick);
-    }, 2000);
+    }, 3333);
     return () => clearInterval(interval);
   }, [state]);
 
@@ -57,11 +59,29 @@ const App = () => {
     });
   };
   const fadeIn = (index, duration) => {
-    gsap.to(sliderList.children[index], duration, {
-      opacity: 1,
-      ease: "Power3.easeInOut",
-      delay: 0.44,
-    });
+    //let aaa = sliderList.children[index].children[0].children[0].textContent;
+    console.log(slideInfo[index].name);
+    var tl = gsap.timeline();
+    tl.to(
+      sliderList.children[index],
+      duration,
+      {
+        opacity: 1,
+        ease: "Power3.easeInOut",
+      },
+      "scrambleIt"
+    ).to(
+      ".name",
+      {
+        duration: 0.8,
+        scrambleText: {
+          text: slideInfo[index].name,
+          chars: "01",
+          speed: 1,
+        },
+      },
+      "+=scrambleIt+0.2"
+    );
   };
 
   const nextSlide = () => {
@@ -76,7 +96,7 @@ const App = () => {
 
     slideIt(newActive);
     scale(imageList.children[newActive], 1, 1.5);
-    fadeOut(oldActive, 1);
+    fadeOut(oldActive, 0.44);
     fadeIn(newActive, 1);
   };
 
@@ -92,7 +112,7 @@ const App = () => {
 
     slideIt(newActive);
     scale(imageList.children[newActive], 1, 1.6);
-    fadeOut(oldActive, 1);
+    fadeOut(oldActive, 0.44);
     fadeIn(newActive, 1);
   };
 
