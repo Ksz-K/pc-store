@@ -59,8 +59,6 @@ const App = () => {
     });
   };
   const fadeIn = (index, duration) => {
-    //let aaa = sliderList.children[index].children[0].children[0].textContent;
-    console.log(slideInfo[index].name);
     var tl = gsap.timeline();
     tl.to(
       sliderList.children[index],

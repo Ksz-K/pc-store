@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Anybody";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/61488/ETCAnybodyPB.woff2") format("woff2-variations");
+  font-display: block;
+  font-style: normal italic;
+  font-weight: 100 900;
+  font-stretch: 10% 400%;
+}
+
 .header {
   display: flex;
   height: 10vh;
@@ -19,12 +28,14 @@
       height: 63px;
     }
     .menu {
-      button {
-        border: none;
-        background: none;
-        outline: none;
+      display: flex;
+      font-family: "Anybody";
+      span {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 900;
+        font-stretch: 400%;
         cursor: pointer;
-        font-size: 0.8rem;
         mix-blend-mode: difference;
       }
     }

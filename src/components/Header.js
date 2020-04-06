@@ -1,16 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
+import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
 import { fadeIn, fadeOut } from "./Animations";
+
+gsap.registerPlugin(SplitText);
 
 const Header = ({ history }) => {
   const [state, setState] = useState({
     initial: false,
     clicked: null,
-    menuName: "Menu"
+    menuName: "Menu",
   });
 
-  const [disabled, setDisabled] = useState(false);
+  // const [disabled, setDisabled] = useState(false);
 
   let LogoJLC = useRef(null);
 
@@ -30,46 +34,78 @@ const Header = ({ history }) => {
 
   // Toggle menu
   const handleMenu = () => {
-    disableMenu();
+    // disableMenu();
     if (state.initial === false) {
       setState({
         initial: null,
         clicked: true,
-        menuName: "Zwiń"
+        menuName: "Zwiń",
       });
     } else if (state.clicked === true) {
       setState({
         clicked: !state.clicked,
-        menuName: "Menu"
+        menuName: "Menu",
       });
     } else if (state.clicked === false) {
       setState({
         clicked: !state.clicked,
-        menuName: "Zwiń"
+        menuName: "Zwiń",
       });
     }
   };
 
+  useEffect(() => {
+    let mySplitText = new SplitText(".menuHandle", {
+      type: "chars",
+      charsClass: "char",
+    });
+
+    let gtl = gsap.timeline({ yoyo: true, repeat: -1, delay: 0 });
+
+    function animateText() {
+      let menuHandleTl = gsap.timeline().to(".char", {
+        fontWeight: 100,
+        fontStretch: "15%",
+        ease: "sine.inOut",
+        duration: 0.8,
+        stagger: {
+          each: 0.4,
+          yoyo: true,
+          repeat: -1,
+        },
+      });
+
+      return menuHandleTl;
+    }
+
+    gsap.to(".menuHandle", {
+      autoAlpha: 1,
+      duration: 1,
+      ease: "none",
+    });
+
+    gtl.add(animateText()).play();
+  });
   //Determine if out menu button should be disabled
-  const disableMenu = () => {
-    setDisabled(!disabled);
-    setTimeout(() => {
-      setDisabled(false);
-    }, 1200);
-  };
+  // const disableMenu = () => {
+  //   setDisabled(!disabled);
+  //   setTimeout(() => {
+  //     setDisabled(false);
+  //   }, 1200);
+  // };
 
   return (
     <div className="header ">
       <div className="inner-header">
-        <div ref={el => (LogoJLC = el)} className="logo">
+        <div ref={(el) => (LogoJLC = el)} className="logo">
           <Link to="/">
             <img src="./img/logo.png" alt="" />
           </Link>
         </div>
         <div className="menu">
-          <button disabled={disabled} onClick={handleMenu}>
+          <span className="menuHandle" onClick={handleMenu}>
             {state.menuName}
-          </button>
+          </span>
         </div>
       </div>
 
