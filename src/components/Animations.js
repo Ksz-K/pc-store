@@ -110,10 +110,10 @@ export const handleImage = (image, target) => {
 
 // Removes the  image once you hover off
 export const handleImageReturn = (target) => {
-  // gsap.to(target, {
-  //   duration: 0.8,
-  //   skewY: 0
-  // });
+  gsap.to(target, {
+    duration: 0.8,
+    skewY: 0,
+  });
   gsap.to(target, {
     duration: 0.88,
     opacity: 0,
