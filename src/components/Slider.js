@@ -27,46 +27,47 @@ const App = () => {
     return () => clearInterval(interval);
   }, [state]);
 
-  const simulateClick = e => {
-    if (e && carousel.classList.value === "start") {
+  const simulateClick = (e) => {
+    const isStarted = carousel.classList.value === "slider-section start";
+    if (e && isStarted) {
       e.click();
     }
   };
 
-  const slideIt = index => {
+  const slideIt = (index) => {
     gsap.to(".slide-image ul li", 1, {
-      x: function() {
+      x: function () {
         return index * -1 * imageWidth;
       },
-      ease: "Power3.easeOut"
+      ease: "Power3.easeOut",
     });
   };
 
   const scale = (index, duration, ratio = 1) => {
     gsap.from(index, duration, {
       scale: ratio,
-      ease: "Power3.easeOut"
+      ease: "Power3.easeOut",
     });
   };
 
   const fadeOut = (index, duration) => {
     gsap.to(sliderList.children[index], duration, {
       opacity: 0,
-      ease: "Power3.easeInOut"
+      ease: "Power3.easeInOut",
     });
   };
   const fadeIn = (index, duration) => {
     gsap.to(sliderList.children[index], duration, {
       opacity: 1,
       ease: "Power3.easeInOut",
-      delay: 0.44
+      delay: 0.44,
     });
   };
 
   const nextSlide = () => {
     let oldActive = arr
-      .map(elLi => elLi.classList.value === "active")
-      .findIndex(visible => visible === true);
+      .map((elLi) => elLi.classList.value === "active")
+      .findIndex((visible) => visible === true);
     let newValue = state;
     newValue[oldActive] = false;
     let newActive = oldActive === arr.length * 1 - 1 ? 0 : oldActive + 1;
@@ -81,8 +82,8 @@ const App = () => {
 
   const prevSlide = () => {
     let oldActive = arr
-      .map(elLi => elLi.classList.value === "active")
-      .findIndex(visible => visible === true);
+      .map((elLi) => elLi.classList.value === "active")
+      .findIndex((visible) => visible === true);
     let newValue = state;
     newValue[oldActive] = false;
     let newActive = oldActive === 0 ? arr.length * 1 - 1 : oldActive - 1;
@@ -96,7 +97,7 @@ const App = () => {
   };
 
   return (
-    <div id="carousel" ref={el => (carousel = el)} className="slider-section">
+    <div id="carousel" ref={(el) => (carousel = el)} className="slider-section">
       <div className="slider-container">
         <div onClick={prevSlide} className="arrows left">
           <span>
@@ -105,7 +106,7 @@ const App = () => {
         </div>
         <div className="inner">
           <div className="slide-image">
-            <ul ref={el => (imageList = el)}>
+            <ul ref={(el) => (imageList = el)}>
               {slideInfo.map((person, index) => (
                 <li key={person.id} className={state[index] ? "active" : ""}>
                   <img src={person.image} alt={person.name} />
@@ -114,8 +115,8 @@ const App = () => {
             </ul>
           </div>
           <div className="slide-desc">
-            <ul ref={el => (sliderList = el)}>
-              {slideInfo.map(personInfo => (
+            <ul ref={(el) => (sliderList = el)}>
+              {slideInfo.map((personInfo) => (
                 <li key={personInfo.id}>
                   <div className="content-inner">
                     <h3 className="name">{personInfo.name}</h3>
@@ -129,7 +130,7 @@ const App = () => {
         </div>
 
         <div
-          ref={el => (autoClick = el)}
+          ref={(el) => (autoClick = el)}
           onClick={nextSlide}
           className="arrows right"
         >

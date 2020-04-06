@@ -1,36 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { SplitText } from "gsap/SplitText";
+import { Timeline } from "gsap/gsap-core";
 import { infoboardAnim } from "./Animations";
-gsap.registerPlugin(ScrambleTextPlugin, SplitText);
+
+gsap.registerPlugin(ScrambleTextPlugin, SplitText, Timeline);
 
 const InfoBoard = () => {
-  const [play, setPlay ] = useState({playing: "unknown"});
-  const checkAnim = currentAnim => {
-    console.log(currentAnim.isActive())
+  let visionPanel = useRef(null);
+
+  const [play, setPlay] = useState({ playing: "unknown" });
+  const checkAnim = (currentAnim, jlcVision) => {
     if (!currentAnim.isActive()) {
-      setPlay({ playing: false });
+      jlcVision.revert();
+      setPlay({ playing: "newAnimStart" });
     }
   };
 
   useEffect(() => {
-    console.log("object")
-    let jlcVision = new SplitText("#vision", { type: "words,chars" });
-    jlcVision.revert();
-    jlcVision = new SplitText("#vision", { type: "words,chars" });
-    let chars = jlcVision.chars;
+    let jlcVision = new SplitText("#vision", {
+      type: "words,chars",
+    });
+
     gsap.set("#vision", { perspective: 400 });
-    let currentAnim = infoboardAnim(chars);
+    let currentAnim = infoboardAnim(jlcVision);
+    let tl = new Timeline();
+    tl.add(currentAnim);
+    visionPanel.classList.value !== "history start" && tl.pause();
     const interval = setInterval(() => {
-      checkAnim(currentAnim);
-    }, 2000);
+      checkAnim(currentAnim, jlcVision);
+    }, 2345);
     return () => clearInterval(interval);
   }, [play]);
 
   return (
     <div className="home">
-      <div className="history">
+      <div
+        id="visionPanel"
+        ref={(el) => (visionPanel = el)}
+        className="history"
+      >
         <div id="vision" className="info-heading">
           <strong>JLC First</strong> to przedsiębiorstwo założone w drugiej
           połowie lat 80. przez Jacka Lipińskiego.

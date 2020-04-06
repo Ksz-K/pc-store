@@ -13,8 +13,8 @@ export const staggerReveal = (node1, node2) => {
     skewY: 2,
     ease: "power2.inOut",
     stagger: {
-      amount: 0.1
-    }
+      amount: 0.1,
+    },
   });
 };
 
@@ -25,8 +25,8 @@ export const staggerRevealClose = (node1, node2) => {
     height: 0,
     ease: "power3.inOut",
     stagger: {
-      amount: 0.1
-    }
+      amount: 0.1,
+    },
   });
 };
 
@@ -38,59 +38,59 @@ export const staggerText = (node1, node2, node3) => {
     delay: 0.1,
     ease: "power3.inOut",
     stagger: {
-      amount: 0.3
-    }
+      amount: 0.3,
+    },
   });
 };
 
 // Fade up for the additonal info on our menu
-export const fadeInUp = node => {
+export const fadeInUp = (node) => {
   gsap.from(node, {
     y: 64,
     duration: 1,
     delay: 0.2,
     opacity: 0,
-    ease: "power3.inOut"
+    ease: "power3.inOut",
   });
 };
 
-export const fadeOut = node => {
+export const fadeOut = (node) => {
   gsap.to(node, {
     x: -640,
     duration: 1,
     delay: 0.1,
     opacity: 1,
-    ease: "power3.inOut"
+    ease: "power3.inOut",
   });
 };
 
-export const fadeIn = node => {
+export const fadeIn = (node) => {
   gsap.to(node, {
     x: 0,
     duration: 1,
     delay: 0,
     opacity: 1,
-    ease: "power3.inOut"
+    ease: "power3.inOut",
   });
 };
 
 // Hover on the link
-export const handleHover = e => {
+export const handleHover = (e) => {
   gsap.to(e.target, {
     duration: 0.3,
     y: 3,
     skewX: 4,
-    ease: "power1.inOut"
+    ease: "power1.inOut",
   });
 };
 
 // Hover off the link
-export const handleHoverExit = e => {
+export const handleHoverExit = (e) => {
   gsap.to(e.target, {
     duration: 0.3,
     y: -3,
     skewX: 0,
-    ease: "power1.inOut"
+    ease: "power1.inOut",
   });
 };
 
@@ -99,17 +99,17 @@ export const handleImage = (image, target) => {
     background: `url(${image}) center center`,
     duration: 0.1,
     opacity: 1,
-    ease: "power3.inOut"
+    ease: "power3.inOut",
   });
   gsap.from(target, {
     duration: 0.88,
     skewY: 2,
-    transformOrigin: "right top"
+    transformOrigin: "right top",
   });
 };
 
 // Removes the  image once you hover off
-export const handleImageReturn = target => {
+export const handleImageReturn = (target) => {
   // gsap.to(target, {
   //   duration: 0.8,
   //   skewY: 0
@@ -117,52 +117,154 @@ export const handleImageReturn = target => {
   gsap.to(target, {
     duration: 0.88,
     opacity: 0,
-    skewY: 0
+    skewY: 0,
   });
 };
 
-//Animation Infoboard 1
+//Animation Infoboard
 export const infoboardAnim = (
-  chars,
-  select = Date.now()
-    .toString()
-    .substr(-1)
+  jlcVision,
+  select = Date.now().toString().substr(-1)
 ) => {
   switch (select) {
-    case "1":
-      return gsap.from(chars, {
+    case "0":
+      return gsap.from(jlcVision.chars, {
         duration: 0.8,
         opacity: 0,
         x: 0,
         yoyo: true,
+        repeat: 1,
         ease: "back",
-        stagger: 0.01     
-      })
-    case "2":
-      return gsap.from(chars, {
+        stagger: 0.01,
+      });
+    case "1":
+      return gsap.from(jlcVision.chars, {
         duration: 0.8,
-        opacity: 0,
+        opacity: 1,
         scale: 0,
         y: 80,
         rotationX: 180,
         transformOrigin: "0% 50% -50",
         ease: "back",
         yoyo: true,
-        stagger: 0.01
+        repeat: 1,
+        stagger: 0.01,
+      });
+    case "2":
+      return gsap.from(jlcVision.chars, {
+        duration: 0.8,
+        opacity: 1,
+        scale: 0,
+        y: -80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        yoyo: true,
+        repeat: 1,
+        stagger: 0.01,
+      });
+    case "3":
+      return gsap.from(jlcVision.chars, {
+        duration: 0.8,
+        opacity: 1,
+        scale: 0,
+        y: -8,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "elastic",
+        yoyo: true,
+        repeat: 1,
+        stagger: 0.01,
+      });
+    case "4":
+      return gsap.from(jlcVision.chars, {
+        duration: 0.8,
+        opacity: 1,
+        scale: 0,
+        y: -8,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "bounce",
+        yoyo: true,
+        repeat: 1,
+        stagger: 0.01,
+      });
+    case "5":
+      return gsap.from(jlcVision.chars, {
+        duration: 0.6,
+        scale: 4,
+        autoAlpha: 0,
+        rotationX: -180,
+        transformOrigin: "100% 50%",
+        yoyo: true,
+        repeat: 1,
+        ease: "back.out",
+        stagger: 0.02,
+      });
+    case "6":
+      return gsap.from(jlcVision.words, {
+        duration: 0.7,
+        scale: 3,
+        autoAlpha: 0,
+        yoyo: true,
+        repeat: 1,
+        ease: "elastic",
+        stagger: 0.2,
+      });
+    case "7":
+      return gsap.from(jlcVision.words, {
+        duration: 0.5,
+        scale: 2.2,
+        autoAlpha: 0,
+        yoyo: true,
+        repeat: 1,
+        ease: "bounce",
+        stagger: 0.5,
+      });
+    case "8":
+      return gsap.from(
+        jlcVision.chars,
+        {
+          duration: 0.2,
+          autoAlpha: 0,
+          scale: 4,
+          force3D: true,
+          yoyo: true,
+          repeat: 1,
+          stagger: 0.01,
+        },
+        0.5
+      );
+
+    case "9":
+      return gsap.from(jlcVision.chars, {
+        duration: 0.8,
+        opacity: 0,
+        x: 10,
+        y: 1,
+        scale: 0.3,
+        yoyo: true,
+        repeat: 1,
+        ease: "back",
+        stagger: 0.01,
       });
 
     default:
-      return gsap.from(chars, {
-        duration: 0.8,
-        opacity: 0,
-        scale: 0,
-        y: 80,
-        rotationX: 180,
-        transformOrigin: "0% 50% -50",
-        ease: "back",
-        repeat: 1,
-        yoyo: true,
-        stagger: 0.01
-      },"+=0");
+      return gsap.from(
+        jlcVision.chars,
+        {
+          duration: 0.8,
+          opacity: 1,
+          scale: 0,
+          y: 80,
+          rotationX: 180,
+          transformOrigin: "0% 50% -50",
+          ease: "back",
+          repeat: 1,
+          yoyo: true,
+          stagger: 0.01,
+        },
+        "+=0"
+      );
   }
 };

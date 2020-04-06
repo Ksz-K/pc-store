@@ -16,12 +16,12 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
-    visibility: visible;
+    visibility: hidden;
     .info-heading {
       width: 90%;
       margin-left: 3%;
       margin-right: 7%;
-      color: #fff;
+      color: rgba(255, 255, 255, 0);
       font-size: 0.7rem;
       line-height: 1.15rem;
       font-weight: 500;

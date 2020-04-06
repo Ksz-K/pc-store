@@ -25,8 +25,17 @@ const Curtain = () => {
       .to(".center", { duration: 3, width: "100%" }, "bottom")
       .to(".side", { duration: 3, width: "0%" }, "bottom")
       .to(".curtain", { duration: 0.1, display: "none" }, "bottom+=3")
-      .to(".history", { duration: 0.1, visibility: "visible" }, "bottom+=4")
-      .to("#carousel", { className: "+=start" }, "bottom+=5");
+      .to(
+        ".history",
+        { duration: 0.1, visibility: "visible", className: "+=history start" },
+        "bottom+=4"
+      )
+      .to(
+        ".info-heading",
+        { duration: 0.7, color: "rgba(255, 255, 255, 1)"},
+        "bottom+=4"
+      )
+      .to("#carousel", { className: "+=slider-section start" }, "bottom+=5");
   });
   return (
     <div className="curtain">
