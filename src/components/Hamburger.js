@@ -10,7 +10,7 @@ import {
   handleHoverExit,
   handleImageReturn,
   handleImage,
-  staggerRevealClose
+  staggerRevealClose,
 } from "./Animations";
 
 import akcesoria from "../images/keyboard.png";
@@ -24,7 +24,7 @@ const offer = [
   { name: "Serwis", image: service },
   { name: "Konsultacje", image: consulting },
   { name: "Oprogramowanie", image: software },
-  { name: "Kontakt", image: jlc_pop }
+  { name: "Kontakt", image: jlc_pop },
 ];
 
 const Hamburger = ({ state }) => {
@@ -35,6 +35,10 @@ const Hamburger = ({ state }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let line3 = useRef(null);
+  let line4 = useRef(null);
+  let line5 = useRef(null);
+  let line6 = useRef(null);
+  let line7 = useRef(null);
   let info = useRef(null);
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const Hamburger = ({ state }) => {
       gsap.to([reveal1, reveal2], {
         duration: 0,
         opacity: 1,
-        height: "100%"
+        height: "100%",
       });
       staggerReveal(reveal1, reveal2);
       fadeInUp(info);
@@ -55,14 +59,14 @@ const Hamburger = ({ state }) => {
   }, [state]);
 
   return (
-    <div ref={el => (menuLayer = el)} className="hamburger-menu">
+    <div ref={(el) => (menuLayer = el)} className="hamburger-menu">
       <div
-        ref={el => (reveal1 = el)}
+        ref={(el) => (reveal1 = el)}
         className="menu-secondary-background-color"
       ></div>
-      <div ref={el => (reveal2 = el)} className="menu-layer">
+      <div ref={(el) => (reveal2 = el)} className="menu-layer">
         <div
-          ref={el => (offerImage = el)}
+          ref={(el) => (offerImage = el)}
           className="menu-image-background"
         ></div>
         <div className="canister">
@@ -72,38 +76,78 @@ const Hamburger = ({ state }) => {
                 <ul>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line1 = el)}
-                      to="/opportunities"
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line1 = el)}
+                      to="/hardware"
                     >
-                      Opportunities
+                      Sprzęt
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line2 = el)}
-                      to="/solutions"
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line2 = el)}
+                      to="/software"
                     >
-                      Solutions
+                      Oprogramowanie
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line3 = el)}
-                      to="/contact-us"
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line3 = el)}
+                      to="/services"
                     >
-                      Contact us
+                      Serwis
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line4 = el)}
+                      to="/consulting"
+                    >
+                      Konsultacje
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line5 = el)}
+                      to="/lanmanwan"
+                    >
+                      Sieci
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line6 = el)}
+                      to="/consumables"
+                    >
+                      Tusze - Tonery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line7 = el)}
+                      to="/pos"
+                    >
+                      Kasy fiskalne
                     </Link>
                   </li>
                 </ul>
               </nav>
-              <div ref={el => (info = el)} className="info">
-                <h3>Our Promise</h3>
+              <div ref={(el) => (info = el)} className="info">
+                <h3>Kontakt</h3>
                 <p>
                   The passage experienced a surge in popularity during the 1960s
                   when Letraset used it on their dry-transfer sheets, and again
@@ -113,7 +157,7 @@ const Hamburger = ({ state }) => {
               </div>
               <div className="locations">
                 Oferta:
-                {offer.map(el => (
+                {offer.map((el) => (
                   <span
                     key={el.name}
                     onMouseEnter={() => handleImage(el.image, offerImage)}
