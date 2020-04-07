@@ -31,11 +31,11 @@ export const staggerRevealClose = (node1, node2) => {
 };
 
 // STAGGER THE LINKS TO APPEAR
-export const staggerText = (node1, node2, node3) => {
-  gsap.from([node1, node2, node3], {
+export const staggerText = (nodeList) => {
+  gsap.from([...nodeList], {
     duration: 0.8,
     y: 100,
-    delay: 0.1,
+    delay: 0.2,
     ease: "power3.inOut",
     stagger: {
       amount: 0.3,
@@ -75,46 +75,32 @@ export const fadeIn = (node) => {
 };
 
 // Hover on the link
-export const handleHover = (e) => {
+export const handleHover = (e, offerImage, image) => {
+  gsap.to(".info", { opacity: 0, duration: 0.2 });
   gsap.to(e.target, {
     duration: 0.3,
     y: 3,
     skewX: 4,
     ease: "power1.inOut",
   });
+  gsap.to(offerImage, {
+    background: `url(${image}) center center`,
+    duration: 0.1,
+    opacity: 1,
+    ease: "power3.inOut",
+  });
 };
 
 // Hover off the link
-export const handleHoverExit = (e) => {
+export const handleHoverExit = (e, offerImage) => {
+  gsap.to(".info", { opacity: 1, duration: 0.2 });
   gsap.to(e.target, {
     duration: 0.3,
     y: -3,
     skewX: 0,
     ease: "power1.inOut",
   });
-};
-
-export const handleImage = (image, target) => {
-  gsap.to(target, {
-    background: `url(${image}) center center`,
-    duration: 0.1,
-    opacity: 1,
-    ease: "power3.inOut",
-  });
-  gsap.from(target, {
-    duration: 0.88,
-    skewY: 2,
-    transformOrigin: "right top",
-  });
-};
-
-// Removes the  image once you hover off
-export const handleImageReturn = (target) => {
-  gsap.to(target, {
-    duration: 0.8,
-    skewY: 0,
-  });
-  gsap.to(target, {
+  gsap.to(offerImage, {
     duration: 0.88,
     opacity: 0,
     skewY: 0,

@@ -8,8 +8,6 @@ import {
   fadeInUp,
   handleHover,
   handleHoverExit,
-  handleImageReturn,
-  handleImage,
   staggerRevealClose,
 } from "./Animations";
 
@@ -20,11 +18,13 @@ import software from "../images/software.jpg";
 import jlc_pop from "../images/jlc_pop.png";
 
 const offer = [
-  { name: "Akcesoria", image: akcesoria },
+  { name: "Sprzęt", image: akcesoria },
+  { name: "Oprogramowanie", image: software },
   { name: "Serwis", image: service },
   { name: "Konsultacje", image: consulting },
-  { name: "Oprogramowanie", image: software },
-  { name: "Kontakt", image: jlc_pop },
+  { name: "Sieci", image: jlc_pop },
+  { name: "Tusze - Tonery", image: jlc_pop },
+  { name: "Kasy fiskalne", image: jlc_pop },
 ];
 
 const Hamburger = ({ state }) => {
@@ -54,7 +54,7 @@ const Hamburger = ({ state }) => {
       });
       staggerReveal(reveal1, reveal2);
       fadeInUp(info);
-      staggerText(line1, line2, line3);
+      staggerText([line1, line2, line3, line4, line5, line6, line7]);
     }
   }, [state]);
 
@@ -76,96 +76,100 @@ const Hamburger = ({ state }) => {
                 <ul>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[0].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line1 = el)}
                       to="/hardware"
                     >
-                      Sprzęt
+                      {offer[0].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[1].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line2 = el)}
                       to="/software"
                     >
-                      Oprogramowanie
+                      {offer[1].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[2].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line3 = el)}
                       to="/services"
                     >
-                      Serwis
+                      {offer[2].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[3].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line4 = el)}
                       to="/consulting"
                     >
-                      Konsultacje
+                      {offer[3].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[4].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line5 = el)}
                       to="/lanmanwan"
                     >
-                      Sieci
+                      {offer[4].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[5].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line6 = el)}
                       to="/consumables"
                     >
-                      Tusze - Tonery
+                      {offer[5].name}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      onMouseEnter={(e) => handleHover(e)}
-                      onMouseOut={(e) => handleHoverExit(e)}
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[6].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line7 = el)}
                       to="/pos"
                     >
-                      Kasy fiskalne
+                      {offer[6].name}
                     </Link>
                   </li>
                 </ul>
               </nav>
               <div ref={(el) => (info = el)} className="info">
-                <h3>Kontakt</h3>
-                <p>
-                  The passage experienced a surge in popularity during the 1960s
-                  when Letraset used it on their dry-transfer sheets, and again
-                  during the 90s as desktop publishers bundled the text with
-                  their software.
-                </p>
-              </div>
-              <div className="locations">
-                Oferta:
-                {offer.map((el) => (
-                  <span
-                    key={el.name}
-                    onMouseEnter={() => handleImage(el.image, offerImage)}
-                    onMouseOut={() => handleImageReturn(offerImage)}
-                  >
-                    {el.name}
-                  </span>
-                ))}
+                <Link to="/contacts">
+                  <h3>Kontakt</h3>
+                  <p>
+                    The passage experienced a surge in popularity during the
+                    1960s when Letraset used it on their dry-transfer sheets,
+                    and again during the 90s as desktop publishers bundled the
+                    text with their software.
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
