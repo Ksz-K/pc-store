@@ -14,8 +14,6 @@ const Header = ({ history }) => {
     menuName: "Menu",
   });
 
-  // const [disabled, setDisabled] = useState(false);
-
   let LogoJLC = useRef(null);
 
   useEffect(() => {
@@ -34,7 +32,6 @@ const Header = ({ history }) => {
 
   // Toggle menu
   const handleMenu = () => {
-    // disableMenu();
     if (state.initial === false) {
       setState({
         initial: null,
@@ -60,18 +57,19 @@ const Header = ({ history }) => {
       charsClass: "char",
     });
 
-    let gtl = gsap.timeline({ yoyo: true, repeat: -1, delay: 0 });
+    let gtl = gsap.timeline({ yoyo: true, repeat: -1, delay: 1 });
 
     function animateText() {
       let menuHandleTl = gsap.timeline().to(".char", {
         fontWeight: 100,
-        fontStretch: "15%",
+        fontStretch: "10%",
         ease: "sine.inOut",
-        duration: 0.8,
+        duration: 3,
         stagger: {
-          each: 0.4,
+          each: 0.7,
           yoyo: true,
           repeat: -1,
+          delya: 1,
         },
       });
 
@@ -86,13 +84,6 @@ const Header = ({ history }) => {
 
     gtl.add(animateText()).play();
   });
-  //Determine if out menu button should be disabled
-  // const disableMenu = () => {
-  //   setDisabled(!disabled);
-  //   setTimeout(() => {
-  //     setDisabled(false);
-  //   }, 1200);
-  // };
 
   return (
     <div className="header ">
