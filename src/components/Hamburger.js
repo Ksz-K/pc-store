@@ -11,7 +11,7 @@ import {
   returnRed,
 } from "./Animations";
 
-import hardware from "../images/hardware.png";
+import hardware from "../images/hardware.jpg";
 import software from "../images/software.jpg";
 import service from "../images/service.jpg";
 import consulting from "../images/consulting.jpg";
