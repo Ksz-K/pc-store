@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Home from "./pages/HomePage";
 import Hardware from "./pages/Hardware";
