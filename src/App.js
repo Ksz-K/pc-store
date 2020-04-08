@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./styles/App.scss";
 import Header from "./components/Header";
 import Home from "./pages/HomePage";
+import Hardware from "./pages/Hardware";
+import Software from "./pages/Software";
+import Services from "./pages/Services";
+import Consulting from "./pages/Consulting";
+import Networking from "./pages/Networking";
+import Consumables from "./pages/Consumables";
+import PointOfSales from "./pages/PointOfSales";
+import Contacts from "./pages/Contacts";
+import PageNotFound from "./pages/PageNotFound";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
@@ -11,25 +21,19 @@ const App = () => {
       <div className="canister">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/opportunities" component={Opportunities} />
-          <Route exact path="/solutions" component={Solutions} />
-          <Route exact path="/contact-us" component={Contact} />
+          <Route exact path="/hardware" component={Hardware} />
+          <Route exact path="/software" component={Software} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/consulting" component={Consulting} />
+          <Route exact path="/networking" component={Networking} />
+          <Route exact path="/consumables" component={Consumables} />
+          <Route exact path="/pos" component={PointOfSales} />
+          <Route exact path="/contacts" component={Contacts} />
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     </Router>
   );
 };
-
-function Opportunities() {
-  return <p>Discover our numerous opportunities</p>;
-}
-
-function Solutions() {
-  return <p>Solutions that help you.</p>;
-}
-
-function Contact() {
-  return <p>Feel free to reach us.</p>;
-}
 
 export default App;

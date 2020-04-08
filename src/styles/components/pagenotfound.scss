@@ -1,0 +1,23 @@
+.PageNotFound {
+    position: relative;
+
+    h1 {
+        font-size: 4vw;
+        color: $green;
+        font-weight: 700;
+        position: absolute;
+        top: 7%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    p {
+        font-size: 2.5vw;
+        color: $purple;
+        font-weight: 700;
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -75,8 +75,7 @@ export const fadeIn = (node) => {
 };
 
 // Hover on the link
-export const handleHover = (e, offerImage, image, hideInfo = true) => {
-  hideInfo && gsap.to(".info", { opacity: 0, duration: 0.2 });
+export const handleHover = (e, offerImage, image) => {
   gsap.to(e.target, {
     duration: 0.3,
     y: 3,
@@ -93,13 +92,15 @@ export const handleHover = (e, offerImage, image, hideInfo = true) => {
 
 // Hover off the link
 export const handleHoverExit = (e, offerImage) => {
-  gsap.to(".info", { opacity: 1, duration: 0.2 });
   gsap.to(e.target, {
     duration: 0.3,
     y: -3,
     skewX: 0,
     ease: "power1.inOut",
   });
+};
+
+export const returnRed = (offerImage) => {
   gsap.to(offerImage, {
     duration: 0.88,
     opacity: 0,

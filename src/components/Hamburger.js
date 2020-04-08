@@ -5,26 +5,29 @@ import { Link } from "react-router-dom";
 import {
   staggerText,
   staggerReveal,
-  fadeInUp,
   handleHover,
   handleHoverExit,
   staggerRevealClose,
+  returnRed,
 } from "./Animations";
 
-import akcesoria from "../images/keyboard.png";
+import hardware from "../images/hardware.png";
+import software from "../images/software.jpg";
 import service from "../images/service.jpg";
 import consulting from "../images/consulting.jpg";
-import software from "../images/software.jpg";
+import networking from "../images/networking.png";
+import inks from "../images/inks.png";
+import posnet from "../images/posnet.png";
 import jlc_pop from "../images/jlc_pop.png";
 
 const offer = [
-  { name: "Sprzęt", image: akcesoria },
+  { name: "Sprzęt", image: hardware },
   { name: "Oprogramowanie", image: software },
   { name: "Serwis", image: service },
   { name: "Konsultacje", image: consulting },
-  { name: "Sieci", image: jlc_pop },
-  { name: "Tusze - Tonery", image: jlc_pop },
-  { name: "Kasy fiskalne", image: jlc_pop },
+  { name: "Sieci", image: networking },
+  { name: "Tusze - Tonery", image: inks },
+  { name: "Kasy fiskalne", image: posnet },
   { name: "Kontakt", image: jlc_pop },
 ];
 
@@ -40,7 +43,7 @@ const Hamburger = ({ state }) => {
   let line5 = useRef(null);
   let line6 = useRef(null);
   let line7 = useRef(null);
-  let info = useRef(null);
+  //let info = useRef(null);
 
   useEffect(() => {
     if (state.clicked === false) {
@@ -54,7 +57,7 @@ const Hamburger = ({ state }) => {
         height: "100%",
       });
       staggerReveal(reveal1, reveal2);
-      fadeInUp(info);
+      //   fadeInUp(info);
       staggerText([line1, line2, line3, line4, line5, line6, line7]);
     }
   }, [state]);
@@ -76,15 +79,17 @@ const Hamburger = ({ state }) => {
               <nav>
                 <ul>
                   <li>
-                    <Link
-                      onMouseEnter={(e) =>
-                        handleHover(e, offerImage, offer[0].image)
-                      }
-                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
-                      ref={(el) => (line1 = el)}
-                      to="/hardware"
-                    >
-                      {offer[0].name}
+                    <Link to="/hardware">
+                      <span
+                        onMouseEnter={(e) =>
+                          handleHover(e, offerImage, offer[0].image)
+                        }
+                        onMouseOut={(e) => handleHoverExit(e, offerImage)}
+                        ref={(el) => (line1 = el)}
+                      >
+                        {" "}
+                        {offer[0].name}
+                      </span>
                     </Link>
                   </li>
                   <li>
@@ -130,7 +135,7 @@ const Hamburger = ({ state }) => {
                       }
                       onMouseOut={(e) => handleHoverExit(e, offerImage)}
                       ref={(el) => (line5 = el)}
-                      to="/lanmanwan"
+                      to="/networking"
                     >
                       {offer[4].name}
                     </Link>
@@ -159,26 +164,21 @@ const Hamburger = ({ state }) => {
                       {offer[6].name}
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      onMouseEnter={(e) =>
+                        handleHover(e, offerImage, offer[7].image)
+                      }
+                      onMouseOut={(e) => handleHoverExit(e, offerImage)}
+                      ref={(el) => (line7 = el)}
+                      to="/contacts"
+                    >
+                      {offer[7].name}
+                    </Link>
+                  </li>
+                  <li onMouseOver={(e) => returnRed(offerImage)}>></li>
                 </ul>
               </nav>
-              <div ref={(el) => (info = el)} className="info">
-                <Link to="/contacts">
-                  <h3
-                    onMouseEnter={(e) =>
-                      handleHover(e, offerImage, offer[7].image, false)
-                    }
-                    onMouseOut={(e) => handleHoverExit(e, offerImage)}
-                  >
-                    Kontakt
-                  </h3>
-                  <p>
-                    The passage experienced a surge in popularity during the
-                    1960s when Letraset used it on their dry-transfer sheets,
-                    and again during the 90s as desktop publishers bundled the
-                    text with their software.
-                  </p>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
