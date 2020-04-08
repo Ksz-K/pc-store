@@ -25,6 +25,7 @@ const offer = [
   { name: "Sieci", image: jlc_pop },
   { name: "Tusze - Tonery", image: jlc_pop },
   { name: "Kasy fiskalne", image: jlc_pop },
+  { name: "Kontakt", image: jlc_pop },
 ];
 
 const Hamburger = ({ state }) => {
@@ -162,7 +163,14 @@ const Hamburger = ({ state }) => {
               </nav>
               <div ref={(el) => (info = el)} className="info">
                 <Link to="/contacts">
-                  <h3>Kontakt</h3>
+                  <h3
+                    onMouseEnter={(e) =>
+                      handleHover(e, offerImage, offer[7].image, false)
+                    }
+                    onMouseOut={(e) => handleHoverExit(e, offerImage)}
+                  >
+                    Kontakt
+                  </h3>
                   <p>
                     The passage experienced a surge in popularity during the
                     1960s when Letraset used it on their dry-transfer sheets,
