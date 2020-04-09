@@ -89,7 +89,7 @@ const Header = ({ history }) => {
     <div className="header ">
       <div className="inner-header">
         <div ref={(el) => (LogoJLC = el)} className="logo">
-          <Link to="/">
+          <Link to="/contacts">
             <img src="./img/logo.png" alt="" />
           </Link>
         </div>
