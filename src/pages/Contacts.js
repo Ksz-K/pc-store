@@ -7,10 +7,10 @@ import { clock } from "react-icons-kit/icomoon/clock";
 import { mail4 } from "react-icons-kit/icomoon/mail4";
 import { calendarO } from "react-icons-kit/fa/calendarO";
 import { calendarMinusO } from "react-icons-kit/fa/calendarMinusO";
-import {sun} from 'react-icons-kit/feather/sun'
-import {open} from 'react-icons-kit/entypo/open'
-import {lock} from 'react-icons-kit/entypo/lock'
-import {ic_watch} from 'react-icons-kit/md/ic_watch'
+import { sun } from "react-icons-kit/feather/sun";
+import { open } from "react-icons-kit/entypo/open";
+import { lock } from "react-icons-kit/entypo/lock";
+import { ic_watch } from "react-icons-kit/md/ic_watch";
 import { gsap } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -26,12 +26,13 @@ const Contacts = () => {
       rotationY: 90,
       transformOrigin: "50% 0",
       ease: "Back.easeOut",
-    }).from(".card", 3.5, {
-      rotationX: 90,
-      transformOrigin: "50% 0",
-      ease: "Back.easeOut",
-      stagger:0.78,
     })
+      .from(".card", 3.5, {
+        rotationX: 90,
+        transformOrigin: "50% 0",
+        ease: "Back.easeOut",
+        stagger: 0.78,
+      })
       .to(".menu", { display: "flex" })
       .to(".canister", { height: "auto" });
   });
@@ -46,7 +47,7 @@ const Contacts = () => {
             src="./img/store.png"
             className="card-img-bottom p-2 mb-1"
             style={{ maxHeight: "30vh" }}
-            alt="Store Photo"
+            alt="Store"
           />
         </div>
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>
@@ -77,31 +78,52 @@ const Contacts = () => {
               {" "}
               <Icon icon={clock} size={20} />
             </li>
-            <li className="list-group-item">Dni powszednie: <Icon icon={open} size={15} />10:00 - 18:00<Icon icon={lock} size={15} /></li>
-            <li className="list-group-item">Sobota: <Icon icon={open} size={15} />10:00 - 14:00<Icon icon={lock} size={15} />
-            <ul>
-              <li className="list-group-item">
-                {" "}
-                <Icon icon={calendarMinusO} size={20} />&nbsp;
-              wyłączywszy okres lipiec-sierpień&nbsp;
-              <Icon icon={sun} size={8} />
-              </li></ul></li>
-            
+            <li className="list-group-item">
+              Dni powszednie: <Icon icon={open} size={15} />
+              10:00 - 18:00
+              <Icon icon={lock} size={15} />
+            </li>
+            <li className="list-group-item">
+              Sobota: <Icon icon={open} size={15} />
+              10:00 - 14:00
+              <Icon icon={lock} size={15} />
+              <ul>
+                <li className="list-group-item">
+                  {" "}
+                  <Icon icon={calendarMinusO} size={20} />
+                  &nbsp; wyłączywszy okres lipiec-sierpień&nbsp;
+                  <Icon icon={sun} size={8} />
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>
           <ul className="list-group list-group-flush">
-          
             <li className="list-group-item">
-            <Icon icon={calendarO} size={20} />&nbsp;W roku 2020 salon będzie zamknięty&nbsp;<Icon icon={calendarMinusO} size={20} />
-              
+              <Icon icon={calendarO} size={20} />
+              &nbsp;W roku 2020 salon będzie zamknięty&nbsp;
+              <Icon icon={calendarMinusO} size={20} />
             </li>
-            <li className="list-group-item"><Icon icon={lock} size={17}/>&nbsp;11-12 czerwca</li>
-            <li className="list-group-item"><Icon icon={lock} size={17}/>&nbsp;2 listopada </li>
-            <li className="list-group-item">w Wigilię i Sylwestra 
-            <ul>
-            <li className="list-group-item"><Icon icon={ic_watch} size={17}/>&nbsp;pracujemy do 14:00&nbsp;<Icon icon={lock} size={15} /> </li></ul>
-          </li></ul>
+            <li className="list-group-item">
+              <Icon icon={lock} size={17} />
+              &nbsp;11-12 czerwca
+            </li>
+            <li className="list-group-item">
+              <Icon icon={lock} size={17} />
+              &nbsp;2 listopada{" "}
+            </li>
+            <li className="list-group-item">
+              w Wigilię i Sylwestra
+              <ul>
+                <li className="list-group-item">
+                  <Icon icon={ic_watch} size={17} />
+                  &nbsp;pracujemy do 14:00&nbsp;
+                  <Icon icon={lock} size={15} />{" "}
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
 

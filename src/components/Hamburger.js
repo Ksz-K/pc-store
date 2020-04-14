@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
+import {withRouter, Link } from "react-router-dom";
 
 import {
   staggerText,
@@ -16,7 +16,7 @@ import software from "../images/software.jpg";
 import service from "../images/service.jpg";
 import consulting from "../images/consulting.jpg";
 import networking from "../images/networking.png";
-import inks from "../images/inks.png";
+import inks from "../images/ink.png";
 import posnet from "../images/posnet.png";
 import jlc_pop from "../images/jlc_pop.png";
 
@@ -31,7 +31,7 @@ const offer = [
   { name: "Kontakt", image: jlc_pop },
 ];
 
-const Hamburger = ({ state }) => {
+const Hamburger = ({ state, location }) => {
   let menuLayer = useRef(null);
   let reveal1 = useRef(null);
   let reveal2 = useRef(null);
@@ -79,7 +79,7 @@ const Hamburger = ({ state }) => {
               <nav>
                 <ul>
                   <li>
-                    <Link to="/hardware">
+                    <Link to={(location.pathname !== "/hardware") ? "/hardware": null} >
                       <span
                         onMouseEnter={(e) =>
                           handleHover(e, offerImage, offer[0].image)
@@ -187,4 +187,4 @@ const Hamburger = ({ state }) => {
   );
 };
 
-export default Hamburger;
+export default withRouter(Hamburger);
