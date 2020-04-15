@@ -1,0 +1,72 @@
+.service {
+    background-color: #333;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    .services {
+        padding-top: 3%;
+        padding-left: 3%;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        opacity: 0;
+        h1 {
+            font-size: 3rem;
+            color: $purple;
+            padding-bottom: 1rem;
+        }
+        p {
+        }
+        ul {
+            list-style-type: none;
+            li {
+                font-size: 1rem;
+                color: $green;
+                padding: 7px;
+                i {
+                    color: #000 !important;
+                }
+                @include media(">=phablet") {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    .vendors {
+        position: absolute;
+        height: 10vh;
+        top: 71vh;
+        left: 0;
+        text-align: center;
+        img.vendorsLogos {
+            opacity: 0;
+            max-width: 1600px;
+        }
+    }
+}
+
+svg.movingPoint {
+    position: absolute;
+    width: 70vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fill: none;
+    overflow: visible;
+}
+
+@for $i from 1 through 200 {
+    .dot:nth-child(#{$i}) {
+        width: 1px + $i/7;
+        height: 1px + $i/7;
+    }
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    transform-box: fill-box;
+    border-radius: 50%;
+    background-color: $green;
+    box-shadow: 0 0 5px 2px #fff, 0 0 10px 3px $red, 0 0 10px 5px $purple;
+}
