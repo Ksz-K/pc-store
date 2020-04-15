@@ -177,7 +177,7 @@ const Contacts = () => {
               className="form-control"
               cols="30"
               rows="10"
-              placeholder="Treść wiadomości"
+              placeholder="Treść wiadomości - wszelkie Państwa dane kontaktowe są opcjonalne. Jeżeli jest Państwa życzeniem, abyśmy się zwrotnie skontaktowali, to poprosimy o tego jasną deklarację i dane do kontaktu. Państwa danych nie przechowujemy. "
               name="Tresc wiadomosci"
             />
             <button

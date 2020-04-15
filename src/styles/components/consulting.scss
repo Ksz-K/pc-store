@@ -1,0 +1,39 @@
+.consulting {
+  background-color: black;
+  font-family: Signika Negative, Asap, sans-serif;
+  color: #ccc;
+  font-weight: 300;
+  font-size: 1.3rem;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  max-height: 98%;
+  h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 5px;
+    padding-top: 10%;
+  }
+  p {
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 5%;
+  }
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  margin-top: 180px;
+  border-radius: 50%;
+  background-color: black;
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+}

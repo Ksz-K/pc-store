@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import * as ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-import { v4 as uuidv4 } from "uuid";
+import uniqid from "uniqid";
 import { withRouter } from "react-router-dom";
 
 gsap.registerPlugin(ScrollMagic, ScrollMagicPluginGsap);
@@ -301,7 +301,7 @@ const Hardware = ({ history }) => {
       </div>
       <div>
         {contentOfPage.map((vendor, index) => (
-          <section className="anim" key={uuidv4()}>
+          <section className="anim" key={uniqid()}>
             <div
               ref={(el) => (vendor[Object.keys(vendor)[1]] = el)}
               className={

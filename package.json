@@ -15,6 +15,7 @@
     "reset-css": "^5.0.1",
     "scrollmagic": "^2.0.7",
     "scrollmagic-plugin-gsap": "^1.0.4",
+    "uniqid": "^5.2.0",
     "uuid": "^7.0.3"
   },
   "scripts": {
