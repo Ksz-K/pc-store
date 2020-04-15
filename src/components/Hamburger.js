@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import {withRouter, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import {
   staggerText,
@@ -79,7 +79,7 @@ const Hamburger = ({ state, location }) => {
               <nav>
                 <ul>
                   <li>
-                    <Link to={(location.pathname !== "/hardware") ? "/hardware": null} >
+                    <Link to="/hardware">
                       <span
                         onMouseEnter={(e) =>
                           handleHover(e, offerImage, offer[0].image)

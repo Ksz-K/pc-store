@@ -3,17 +3,24 @@ import { gsap } from "gsap";
 import * as ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { v4 as uuidv4 } from "uuid";
+import { withRouter } from "react-router-dom";
 
 gsap.registerPlugin(ScrollMagic, ScrollMagicPluginGsap);
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 let controller = new ScrollMagic.Controller();
 
-const Hardware = () => {
+const Hardware = ({ history }) => {
   useEffect(() => {
     gsap.to(".canister", { height: "auto" });
     gsap.to(".menu", { display: "flex" });
     window.addEventListener("scroll", handleScroll(true), true);
   }, []);
+
+  useEffect(() => {
+    history.listen(() => {
+      window.location.reload();
+    });
+  }, [history]);
 
   const contentOfPage = [
     {
@@ -303,7 +310,7 @@ const Hardware = () => {
                   : "grid-12 project project-left"
               }
             >
-              <div className="box">
+              <div className="box py-4">
                 <img src={`./img/${vendor.img}.jpg`} alt={vendor.name} />
                 <div className="overlay"></div>
               </div>
@@ -322,9 +329,18 @@ const Hardware = () => {
             </div>
           </section>
         ))}
+        <button
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+          type="button"
+          className="btn btn-primary btn-lg mt-1  btn-block"
+        >
+          Powrót do menu
+        </button>
       </div>
     </Fragment>
   );
 };
 
-export default Hardware;
+export default withRouter(Hardware);
