@@ -1,0 +1,62 @@
+.inks {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../../images/ink-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+
+  .cardWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    @include media(">=phablet") {
+      margin-left: 7%;
+      margin-right: 7%;
+      margin-top: 3%;
+    }
+  }
+}
+
+.cardFace {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  h1 {
+    margin: 0px;
+    font-size: 30px;
+    padding: 10px 0px 10px 10px;
+    border-bottom: solid 6px #aaa;
+    border-top: solid 6px #aaa;
+    background-color: black;
+    color: white;
+  }
+  &.front {
+    background-color: #333;
+    p {
+      color: $green;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  }
+  &.back {
+    background-color: #fff;
+    h1 {
+      border-color: #91e600;
+    }
+  }
+}
