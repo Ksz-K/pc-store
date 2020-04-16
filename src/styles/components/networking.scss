@@ -1,0 +1,39 @@
+.network {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../../images/net.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .net-services {
+    padding-top: 3%;
+    padding-left: 3%;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    .appear {
+      opacity: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      color: $purple;
+      padding-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      li {
+        font-size: 1rem;
+        color: $green;
+        padding: 7px;
+        i {
+          color: #000 !important;
+        }
+        @include media(">=phablet") {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
