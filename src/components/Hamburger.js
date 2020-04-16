@@ -176,7 +176,7 @@ const Hamburger = ({ state, location }) => {
                       {offer[7].name}
                     </Link>
                   </li>
-                  <li onMouseOver={(e) => returnRed(offerImage)}>></li>
+                  <li onMouseOver={(e) => returnRed(offerImage)}></li>
                 </ul>
               </nav>
             </div>
