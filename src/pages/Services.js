@@ -63,27 +63,31 @@ const Services = () => {
         drawSVG: "100% 100%",
         duration: 1,
       })
-      .to(".services", { opacity: 1, duration: 2 })
+      .to(".appear", {
+        opacity: 1,
+        stagger: 1,
+        duration: 1,
+      })
       .to(".vendorsLogos", { opacity: 1, duration: 3 })
       .to(".vendorsLogos", {
         marginLeft: "44%",
         duration: 3,
-        ease: "Bounce.easeInOut",
+        ease: "Elastic.easeInOut",
       })
       .to(".vendorsLogos", {
         marginLeft: 0,
         duration: 3,
-        ease: "Bounce.easeInOut",
+        ease: "Elastic.easeInOut",
       })
       .to(".vendorsLogos", {
         x: "-44%",
         duration: 3,
-        ease: "Bounce.easeInOut",
+        ease: "Elastic.easeInOut",
       })
       .to(".vendorsLogos", {
         x: 0,
         duration: 3,
-        ease: "Bounce.easeInOut",
+        ease: "Elastic.easeInOut",
       });
   }, []);
 
@@ -93,52 +97,52 @@ const Services = () => {
         <div className="services">
           <h1>Usługi serwisowe:</h1>
           <ul>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={stack} size={20} />
               &nbsp; Instalacja systemu operacyjnego
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={terminal} size={20} />
               &nbsp; Instalacja aplikacji dedykowanych
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={database} size={20} />
               &nbsp; Instalacja aplikacji standardowych
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={shield} size={20} />
               &nbsp; Czyszczenie i konserwacja
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={drive} size={20} />
               &nbsp; Formatowanie dysków
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={forward3} size={20} />
               &nbsp; Optymalizaja systemu
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={wrench} size={20} />
               &nbsp; Naprawy mechaniczne i po zalaniu
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={power} size={20} />
               &nbsp; Wymiana zasilaczy, gniazd i portów
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={hammer2} size={20} />
               &nbsp; Wymiana matrycy
             </li>
-            <li>
+            <li className="appear">
               {" "}
               <Icon icon={ticket} size={20} />
               &nbsp; Inne - realizujące przywrócenie działania
