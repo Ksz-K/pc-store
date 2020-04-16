@@ -1,0 +1,72 @@
+.sw {
+    height: 90vh;
+    width: 100%;
+    background-image: url("../../images/erp-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    .background {
+        background: rgba(lighten($color: #444, $amount: 2), 0.77);
+        margin-left: 10%;
+        margin-right: 10%;
+        border-radius: 7px;
+    }
+    .cardWrapper {
+        width: 80vw;
+        height: 20vh;
+        position: relative;
+        float: left;
+        cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
+}
+
+.cardFace {
+    position: absolute;
+    width: 80vw;
+    height: 20vh;
+    overflow: hidden;
+    img {
+        position: absolute;
+        width: auto;
+        height: 20vh;
+        overflow: hidden;
+    }
+    h1 {
+        margin: 0px;
+        font-size: 30px;
+        padding: 10px 0px 10px 10px;
+        border-bottom: solid 6px #aaa;
+        border-top: solid 6px #aaa;
+        background-color: black;
+        color: white;
+    }
+
+    &.front {
+        background-color: #333;
+        p {
+            color: $green;
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 0.5rem;
+            line-height: 1.4rem;
+            @include media(">=phablet") {
+                font-size: 1rem;
+                padding: 0.7rem 2rem 0.7rem;
+                line-height: 1.4rem;
+            }
+        }
+    }
+    &.back {
+        background-color: #fff;
+
+        h1 {
+            border-color: #91e600;
+        }
+    }
+}

@@ -6,17 +6,19 @@ gsap.registerPlugin(Timeline);
 
 const Consumables = () => {
   function createHover(cardWrapper) {
-    let tl = new Timeline({ paused: true, reversed: true });
-    tl.to(cardWrapper, {
-      duration: 1.2,
-      rotationY: 180,
-      ease: "Back.easeOut",
-    }).to(cardWrapper, {
-      duration: 1.2,
-      rotationY: 0,
-      ease: "Back.easeOut",
-    });
-    tl.play();
+    let tlink = new Timeline({ paused: true, reversed: true });
+    tlink
+      .to(cardWrapper, {
+        duration: 1.2,
+        rotationY: 180,
+        ease: "Back.easeOut",
+      })
+      .to(cardWrapper, {
+        duration: 1.2,
+        rotationY: 0,
+        ease: "Back.easeOut",
+      });
+    tlink.play();
   }
 
   useEffect(() => {
