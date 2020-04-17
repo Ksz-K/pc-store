@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from "react";
 import { gsap } from "gsap";
-import { Icon } from "react-icons-kit";
 
 const Networking = () => {
   useEffect(() => {
