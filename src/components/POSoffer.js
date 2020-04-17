@@ -38,7 +38,7 @@ const POSoffer = () => {
         "Pospay to urządzenia łączące w sobie funkcje kasy, drukarki fiskalnej oraz terminala płatniczego.",
       www:
         "https://www.posnet.com.pl/produkty/category/51/fiskalne-terminale-platnicze-pospay",
-      w3desc: "Posnet - POSPAY informacje",
+      w3desc: "POSPAY - informacje",
       img: "terminal.png",
     },
     {
@@ -46,7 +46,7 @@ const POSoffer = () => {
       dRefs: useRef(null),
       offer: "Wolnostojące, do zabudowy",
       www: "https://www.posnet.com.pl/produkty/category/4/ekrany-dotykowe",
-      w3desc: "Ekrany dotykowe - informacje",
+      w3desc: "Ekrany - informacje",
       img: "touch-screen.jpg",
     },
     {
