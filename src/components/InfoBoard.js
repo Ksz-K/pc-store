@@ -52,7 +52,7 @@ const InfoBoard = () => {
           Rozwiązania klasycznych stacji roboczych, serwerów, desktopów i
           laptopów dla najbardziej wymagających graczy, drukarki, akcesoria,
           serwis, wdrożenia, usługi konsultingowe i szeroki wachlarz
-          oprogramowani standardowego i&nbsp;dedykowanego - to wszystko
+          oprogramowania standardowego i&nbsp;dedykowanego - to wszystko
           znajdziecie Państwo w ofercie JLC First.
           <br />
           Dziś budujemy systemy w oparciu o procesory wyprodukowane w

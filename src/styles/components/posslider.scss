@@ -1,0 +1,145 @@
+.posslider {
+  width: 100%;
+  height: 50vh;
+  background: black;
+}
+
+#content-wrapper {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#box-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+@mixin paph-wrapperx {
+  @for $i from 0 through 21 {
+    .paph-wrapper#{$i} {
+      position: absolute;
+      max-width: 85%;
+      max-height: 30vh;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      z-index: 3;
+      background: rgba(lighten($color: #444, $amount: 2), 0.77);
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius: 7px;
+    }
+  }
+}
+
+@include paph-wrapperx;
+
+#tlslicarousellJLC {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+#foreground {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  margin: 0 auto;
+  background: #0164ab;
+  z-index: 2;
+}
+
+#text {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  padding: 0px 50px;
+  color: #fff;
+  opacity: 1;
+
+  h2 {
+    color: #000;
+    font-size: 1rem;
+    font-weight: bolder;
+    letter-spacing: 2.4px;
+    padding-bottom: 3px;
+    @include media(">=phablet") {
+      font-size: 1.7rem;
+      padding-bottom: 5px;
+    }
+    @include media(">=desktop") {
+      font-size: 2rem;
+    }
+  }
+  p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    letter-spacing: 2.4px;
+    padding-top: 3px;
+    @include media(">=phablet") {
+      font-size: 1.2rem;
+      padding-bottom: 5px;
+      line-height: 1.5rem;
+    }
+    @include media(">=desktop") {
+      font-size: 1.7rem;
+
+      line-height: 1.9rem;
+    }
+  }
+  .icon-line {
+    width: 100%;
+    height: 2px;
+    display: block;
+    background: red;
+  }
+}
+.small-path {
+  top: 10px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #0072bb;
+  opacity: 1;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.path {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  width: 260px;
+  height: 260px;
+  background: #0072bb;
+  opacity: 0.2;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.carousel-indicators li {
+  background-color: purple !important;
+}

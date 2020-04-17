@@ -294,7 +294,7 @@ const Hardware = ({ history }) => {
 
   return (
     <Fragment>
-      <div id="vendors" className="d-grid h70">
+      <div className="d-grid h70">
         <h1> W naszej ofercie sprzętowej </h1>
         <h4>odnajdziemy czołowych dostawców</h4>
         <h4>Świata IT</h4>

@@ -1,0 +1,10 @@
+.h71 {
+  height: 71vh;
+  width: 100%;
+  background-image: url("../../images/posnet.png");
+  background-size: cover;
+  border-radius: 7px;
+  @include media(">=desktop") {
+    border: 7px solid $purple;
+  }
+}

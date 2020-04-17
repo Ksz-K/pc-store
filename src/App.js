@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
 import "./styles/App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
