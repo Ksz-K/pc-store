@@ -62,13 +62,20 @@ const Contacts = () => {
             <li className="list-group-item">Kondratowicza 22 lok. U-07</li>
             <li className="list-group-item">03-285 Warszawa</li>
             <li className="list-group-item">
-              <Icon icon={ic_settings_phone} size={20} /> salon/biuro
+              <Icon icon={ic_settings_phone} size={20} /> salon & biuro{" "}
+              {iPadCorrector && <span>/serwis</span>}
             </li>
-            <li className="list-group-item">22 301-19-09</li>
             <li className="list-group-item">
-              <Icon icon={ic_settings_phone} size={20} /> serwis
+              22 301-19-09{iPadCorrector && <span>/ 22 301-19-10</span>}
             </li>
-            <li className="list-group-item">22 301-19-10</li>
+            {!iPadCorrector && (
+              <li className="list-group-item">
+                <Icon icon={ic_settings_phone} size={20} /> serwis
+              </li>
+            )}
+            {!iPadCorrector && (
+              <li className="list-group-item">22 301-19-10</li>
+            )}
           </ul>
         </div>
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>

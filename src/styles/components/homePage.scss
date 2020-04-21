@@ -22,13 +22,14 @@
       margin-left: 3%;
       margin-right: 7%;
       color: rgba(255, 255, 255, 0);
-      font-size: 0.6rem;
-      line-height: 0.9rem;
-      font-weight: 500;
+      font-family: "Lato";
+      font-size: 0.5rem;
+      line-height: 0.7rem;
+      font-weight: 700;
       border-radius: 12px;
       padding: 2rem;
       background: rgba(lighten($color: #444, $amount: 2), 0.77);
-      @include media(">=oldPhone") {
+      @include media(">oldPhone") {
         font-size: 0.7rem;
         line-height: 1rem;
       }
@@ -45,11 +46,11 @@
         line-height: 2.7vw;
       }
       @include media(">=desktop") {
-        font-size: 1.4rem;
-        line-height: 2.2vw;
+        font-size: 1.3rem;
+        line-height: 1.9vw;
       }
       @include media(">=LGdesktop") {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         line-height: 1.7vw;
       }
     }
