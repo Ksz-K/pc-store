@@ -37,7 +37,7 @@ const Contacts = () => {
       .to(".canister", { height: "auto" });
   });
 
-  let iPadCorrector = window.innerHeight === 768 ? true : false;
+  let iPadCorrector = window.innerWidth === 1024 ? true : false;
   return (
     <div className="container-fluid">
       <div className="contacts row justify-content-around mb-1">
