@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 
@@ -56,7 +56,7 @@ const Consumables = () => {
             </p>
           </div>
           <div className="cardFace back">
-            <img src="./img/erpoptima.png" />
+            <img src="./img/erpoptima.png" alt="ERPOptima" />
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@ const Consumables = () => {
             </p>
           </div>
           <div className="cardFace back">
-            <img src="./img/raks.png" />
+            <img src="./img/raks.png" alt="RAKS" />
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@ const Consumables = () => {
             </p>
           </div>
           <div className="cardFace back">
-            <img src="./img/abs.png" />
+            <img src="./img/abs.png" alt="Asseco" />
           </div>
         </div>
       </div>

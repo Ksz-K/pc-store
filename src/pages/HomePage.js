@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import Curtain from "../components/Curtain";
 import InfoBoard from "../components/InfoBoard";
 import Slider from "../components/Slider";

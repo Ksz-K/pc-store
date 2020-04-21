@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 
@@ -42,7 +42,7 @@ const Consumables = () => {
             <h1>Papier</h1>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/inks.png" />
+            <img src="./img/inks.png" alt="InkVendors" />
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ const Consumables = () => {
             <p>Pełny wybór materiałów eksploatacyjnych</p>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/hp.svg" />
+            <img src="./img/hp.svg" alt="HPinc" />
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ const Consumables = () => {
             <p>Tusze i zamienniki</p>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/lexmark.svg" />
+            <img src="./img/lexmark.svg" alt="Lexmark" />
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ const Consumables = () => {
             <p>Pełna oferta</p>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/canon.svg" />
+            <img src="./img/canon.svg" alt="Canon" />
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ const Consumables = () => {
             <p>Tonery</p>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/brother.svg" />
+            <img src="./img/brother.svg" alt="Brother" />
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@ const Consumables = () => {
             <p>Tonery, tusze i papier</p>
           </div>
           <div className="cardInkFace back">
-            <img src="./img/xerox.svg" />
+            <img src="./img/xerox.svg" alt="XEROX" />
           </div>
         </div>
       </div>
