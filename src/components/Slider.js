@@ -125,21 +125,21 @@ const App = () => {
         <div className="inner">
           <div className="slide-image">
             <ul ref={(el) => (imageList = el)}>
-              {slideInfo.map((person, index) => (
-                <li key={person.id} className={state[index] ? "active" : ""}>
-                  <img src={person.image} alt={person.name} />
+              {slideInfo.map((hwHistory, index) => (
+                <li key={hwHistory.id} className={state[index] ? "active" : ""}>
+                  <img src={hwHistory.image} alt={hwHistory.name} />
                 </li>
               ))}
             </ul>
           </div>
           <div className="slide-desc">
             <ul ref={(el) => (sliderList = el)}>
-              {slideInfo.map((personInfo) => (
-                <li key={personInfo.id}>
+              {slideInfo.map((hwHistoryInfo) => (
+                <li key={hwHistoryInfo.id}>
                   <div className="content-inner">
-                    <h3 className="name">{personInfo.name}</h3>
-                    <h2 className="title">{personInfo.title}</h2>
-                    <p className="quote">{personInfo.quote}</p>{" "}
+                    <h3 className="name">{hwHistoryInfo.name}</h3>
+                    <h2 className="title">{hwHistoryInfo.title}</h2>
+                    <p className="quote">{hwHistoryInfo.quote}</p>{" "}
                   </div>
                 </li>
               ))}
