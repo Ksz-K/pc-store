@@ -60,7 +60,7 @@ const POSoffer = () => {
     {
       vendor: "Skanery kodów kreskowych",
       dRefs: useRef(null),
-      offer: "Płyty główne // Karty graficzne // Notebooki",
+      offer: "Skanery kodów kreskowych, kolektory danych",
       www: "https://www.posnet.com.pl/produkty/category/24/kody-kreskowe/",
       w3desc: "Dodatkowe informacje",
       img: "bar-reader.jpg",

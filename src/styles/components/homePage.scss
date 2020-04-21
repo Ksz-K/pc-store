@@ -22,12 +22,16 @@
       margin-left: 3%;
       margin-right: 7%;
       color: rgba(255, 255, 255, 0);
-      font-size: 0.7rem;
-      line-height: 1.15rem;
+      font-size: 0.6rem;
+      line-height: 0.9rem;
       font-weight: 500;
       border-radius: 12px;
       padding: 2rem;
       background: rgba(lighten($color: #444, $amount: 2), 0.77);
+      @include media(">=oldPhone") {
+        font-size: 0.7rem;
+        line-height: 1rem;
+      }
       @include media(">=phone") {
         font-size: 0.9rem;
         line-height: 3.5vw;

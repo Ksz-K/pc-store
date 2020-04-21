@@ -177,8 +177,11 @@ section.anim {
     left: 0;
     top: 0;
     background: #ececec;
-    width: 100%;
+    width: 120%;
     height: 100%;
+    @include media(">=phablet") {
+      width: 100%;
+    }
   }
 }
 

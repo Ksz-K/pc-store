@@ -38,7 +38,7 @@ const Contacts = () => {
   });
   return (
     <div className="container-fluid">
-      <div className="row justify-content-around mb-1">
+      <div className="contacts row justify-content-around mb-1">
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>
           <div className="card-body text-center">
             <h4 className="h4">Zapraszamy do salonu JLC First</h4>
