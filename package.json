@@ -2,7 +2,6 @@
   "name": "jlc-store",
   "version": "0.9.0",
   "private": false,
-  "homepage": "https://ksz-k.github.io/pc-store/",
   "dependencies": {
     "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
