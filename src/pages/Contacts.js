@@ -36,6 +36,8 @@ const Contacts = () => {
       .to(".menu", { display: "flex" })
       .to(".canister", { height: "auto" });
   });
+
+  let iPadCorrector = window.innerHeight === 768 ? true : false;
   return (
     <div className="container-fluid">
       <div className="contacts row justify-content-around mb-1">
@@ -52,9 +54,11 @@ const Contacts = () => {
         </div>
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <Icon icon={ic_local_post_office} size={20} />
-            </li>
+            {!iPadCorrector && (
+              <li className="list-group-item">
+                <Icon icon={ic_local_post_office} size={20} />
+              </li>
+            )}
             <li className="list-group-item">Kondratowicza 22 lok. U-07</li>
             <li className="list-group-item">03-285 Warszawa</li>
             <li className="list-group-item">
@@ -69,10 +73,12 @@ const Contacts = () => {
         </div>
         <div className="card col-6 col-lg-3" style={{ height: "34vh" }}>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              {" "}
-              <Icon icon={mail4} size={20} />
-            </li>
+            {!iPadCorrector && (
+              <li className="list-group-item">
+                {" "}
+                <Icon icon={mail4} size={20} />
+              </li>
+            )}
             <li className="list-group-item">sklep@first.com.pl</li>
             <li className="list-group-item">
               {" "}
