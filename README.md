@@ -15,3 +15,7 @@ https://jlc-first.kszk.pl/
     "react-router-dom": "^5.1.2",
     "scrollmagic": "^2.0.7",
     "scrollmagic-plugin-gsap": "^1.0.4",
+
+### You may clone it and tune it based on your own requirements.
+
+Access to Greensock Club resources is required - https://greensock.com/club/
